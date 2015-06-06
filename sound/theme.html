@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+
+<body>
+<table width="800" border="0" cellpadding="0" cellspacing="0" class="maintable" align="center">
+  <tr class="top_nav_bg">
+    <td colspan="5" >
+	<!-- start Home,about and contact links here -->
+	<div class="main_top_nav">   
+   <div class="top_nav2"><a href="#">HOME</a></div><div class="top_nav2"><a href="#">ABOUT</a></div><div class="top_nav"><a href="#">CONTACTS</a></div>
+   <!-- end Home,about and contact links here -->
+   </div>
+   <div class="search_form"><form style="margin: 0px;" action="<{$xoops_url}>/search.php" method="get">
+   Search:
+  <input type="text" name="query" size="14" />
+  <input type="hidden" name="action" value="results" />
+  <input type="submit" value="GO!" />
+</form>
+ </div> 
+   </td>
+  </tr>
+  <tr class="header">
+  <td colspan="2"><img src="<{$xoops_imageurl}>images/box.jpg" alt="<{$xoops_sitename}>" id="company_logo" /></td>
+  <td colspan="3" class="header_bg"><div id="companyID"><div id="company_name"><{$xoops_sitename}></div>
+  <div id="company_slogan"><{$xoops_pagetitle}></div></div>
+   </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="header_spacer">&nbsp;</td>
+  </tr>
+  <tr id="navi">
+    <td colspan="5">
+	<!-- edit here -->
+	<div class="navi"><a href="#">home</a></div>
+    <div class="navi"><a href="#">about us</a></div>
+    <div class="navi"><a href="#">downloads</a></div>
+    <div class="navi"><a href="#">demos/features</a></div>
+    <div class="navi"><a href="#">contacts</a></div>
+	<!-- stop here -->
+	</td>
+  </tr>
+  <tr>
+    <td id="leftcolumn" colspan="2" rowspan="2" valign="top">
+<!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="sound/theme_blockleft.html"}>
+        <{/foreach}>
+               <{foreach item=block from=$xoops_rblocks}>
+          <{include file="sound/theme_blockleft.html"}>
+        <{/foreach}>
+               </div></td>
+    <!-- End left blocks loop -->
+
+    </td>
+    <td colspan="3" id="link_shopping"><div id="welcome"><{if $xoops_isuser}>Welcome: <{$xoops_uname}><{/if}></div><a href="#">Continue Shopping </a><img src="<{$xoops_imageurl}>images/con_shop.gif" alt="continue shopping" align="middle" /></td>
+  </tr>
+  <tr>
+    <td colspan="3" id="mainbody">
+	
+	
+	<table class="maintable" cellspacing="0">
+    <tr>
+      <td id="centercolumn">
+    <!-- Display center blocks if any -->
+
+<{if $xoops_showcblock == 1}>
+        <table cellspacing="0">
+		<tr>
+			<td id="centerCcolumn" colspan="2">
+<!-- Start center-center blocks loop -->
+			<{foreach item=block from=$xoops_ccblocks}>
+				<{include file="sound/theme_blockcenter.html"}><br />
+			<{/foreach}>
+			<!-- End center-center blocks loop -->
+			</td>
+		</tr>
+		<tr>
+			<td id="centerLcolumn">		
+			<!-- Start center-left blocks loop -->
+			<{foreach item=block from=$xoops_clblocks}>
+				<{include file="sound/theme_blockcenter_l.html"}><br />
+			<{/foreach}>
+			<!-- End center-left blocks loop -->
+			</td>
+			<td id="centerRcolumn">		
+			<!-- Start center-right blocks loop -->
+			<{foreach item=block from=$xoops_crblocks}>
+				<{include file="sound/theme_blockcenter_l.html"}><br />
+			<{/foreach}>
+			<!-- End center-right blocks loop -->
+			</td>
+		</tr>
+        </table>
+        <{/if}>
+        <!-- End display center blocks -->
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+        <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+        <table cellspacing="0">
+        <{if $xoBlocks.page_bottomcenter}>
+		<tr><td id="bottomCcolumn" colspan="2">
+			<{foreach from=$xoBlocks.page_bottomcenter item=block}><{include file="sound/theme_blockcenter.html"}><br /><{/foreach}>
+			</td>
+		</tr>
+		<{/if}>
+		<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+		<tr>
+			<td id="bottomLcolumn">
+				<{foreach from=$xoBlocks.page_bottomleft item=block}><{include file="sound/theme_blockcenter_l.html"}><br /><{/foreach}>
+			</td>
+			<td id="bottomRcolumn">
+				<{foreach from=$xoBlocks.page_bottomright item=block}><{include file="sound/theme_blockcenter_l.html"}><br /><{/foreach}>
+			</td>
+		</tr>
+        <{/if}>
+        </table>
+        <{/if}>
+      </td>
+    </tr>
+  </table>
+	</td>
+  </tr>
+  <tr>
+    <td colspan="5" id="footer">
+	<div class="footer">
+	<!-- edit here -->
+	<a href="#">Home</a> || <a href="#">About Us</a> || <a href="#">Downloads</a> || <a href="#">Demos and Features</a> || <a href="#">Contacts</a> <br /><br />
+	<!-- stop here -->
+	<!-- respect others hard work, leave a link. -->
+	<a href="http://sms.calibernation.com">Copyright 2006 SMS Designs All Rights Reserved</a>	</div>
+	</td>
+  </tr>
+</table>
+</body>
+</html>
